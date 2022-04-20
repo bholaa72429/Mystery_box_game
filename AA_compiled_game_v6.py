@@ -84,6 +84,15 @@ class Start:
         self.high_stakes_button.config(state=DISABLED)
 
     def check_funds(self):
+
+        print("----------------")
+        time_string = strftime("%H:%M:%S %p \n  %A  \n %x")
+        # self.time.config(text=time_string)
+        # self.time.after(1000,self.my_time)
+        date_display = "Current Time is {}".format(time_string)
+        print(date_display)
+        print("----------------")
+
         starting_balance = self.start_amount_entry.get()
 
         # set error bg colours (and assume that there are no
@@ -162,7 +171,7 @@ class Game:
     def __init__(self, partner, stakes, starting_balance):
         # print(stakes)
         # print(starting_balance
-        print("hereeee")
+     
 
         # initialise variable
         self.balance = IntVar()
@@ -185,9 +194,9 @@ class Game:
         # if user press cross at top, game quits
         self.game_box.protocol('WM_DELETE_WINDOW', self.to_quit)
 
-        # date / time
-        self.time = Button(self.game_frame, text="ADD TIMESTAMP",font="Arial",command=self.my_time)
-        self.time.grid(row=0,padx=10)
+        # # date / time
+        # self.time = Button(self.game_frame, text="ADD TIMESTAMP",font="Arial",command=self.my_time)
+        # self.time.grid(row=0,padx=10)
 
         # Heading Row
         #self.heading_label = Label(self.game_frame, text="Play...",
@@ -347,12 +356,12 @@ class Game:
     def to_quit(self):
         root.destroy()
 
-    def my_time(self):
-        time_string = strftime("%H:%M:%S \n %A %p \n %x")
-        self.time.config(text=time_string)
-        #self.time.after(1000,self.my_time)
-        date_display = "Current Time is {}".format(time_string)
-        print(date_display)
+    # #def my_time(self):
+    #     time_string = strftime("%H:%M:%S \n %A %p \n %x")
+    #     #self.time.config(text=time_string)
+    #     #self.time.after(1000,self.my_time)
+    #     date_display = "Current Time is {}".format(time_string)
+    #     print(date_display)
 
         # label_date_now.config(text=time_string)
 
